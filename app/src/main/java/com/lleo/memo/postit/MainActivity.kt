@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -61,8 +62,10 @@ fun Greeting(message: Message) {
             Spacer(modifier = Modifier.width(4.dp))
 
             Surface(shape = MaterialTheme.shapes.medium,
-                elevation = 1.dp
-                
+                elevation = 1.dp,
+                color = surfaceColor,
+                modifier = Modifier.animateContentSize().padding(1.dp)
+
             ) {
                 Text(text = message.message,
                     style = MaterialTheme.typography.body2,
